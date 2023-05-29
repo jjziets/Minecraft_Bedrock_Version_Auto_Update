@@ -13,7 +13,7 @@ This project sets up a Dockerized Minecraft Bedrock server, allowing you to run 
 2. Navigate to the project directory.
 3. Edit the docker-compose.yml and replace the values in the environment sections with the settings you prefer for your Minecraft servers. The example docker-compose.yml will setup two minecraft servers, Survival Server on port 19132 and creative on port 19133
 4. You need to create these volumes before running the docker-compose command.
-''''
+```
 bash
 Copy code
 docker volume create survival-data
@@ -21,7 +21,7 @@ docker volume create creative-data
 
 docker run --rm -v survival-data:/data alpine chown 1000:1000 /data
 docker run --rm -v creative-data:/data alpine chown 1000:1000 /data
-''''
+```
 
 5. Run `docker-compose up -d` to start the server containers.
 
