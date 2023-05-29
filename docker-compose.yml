@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  minecraft-survival:
+    image: itzg/minecraft-bedrock-server:latest
+    volumes:
+      - survival-data:/data
+    ports:
+      - 19132:19132/udp
+    environment:
+      - EULA=TRUE
+      - SERVER_NAME=Survival Server
+      - GAMEMODE=survival
+      - LEVEL_NAME=Survival World
+      - DIFFICULTY=normal
+      - MAX_PLAYERS=10
+      - MAX_THREADS=12
+      - TICK_DISTANCE=12
+    restart: always
+    stop_grace_period: 1m
+
+  minecraft-creative:
+    image: itzg/minecraft-bedrock-server:latest
+    volumes:
+      - creative-data:/data
+    ports:
+      - 19133:19132/udp
+    environment:
+      - EULA=TRUE
+      - SERVER_NAME=Creative Server
+      - GAMEMODE=creative
+      - LEVEL_NAME=Creative World
+      - DIFFICULTY=peaceful
+      - MAX_PLAYERS=10
+      - MAX_THREADS=12
+      - TICK_DISTANCE=12
+      - ALLOW_CHEATS=true
+      - DEFAULT_PLAYER_PERMISSION_LEVEL=operator
+    restart: always
+    stop_grace_period: 1m
+
+volumes:
+  survival-data:
+  creative-data:
