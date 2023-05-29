@@ -1,6 +1,6 @@
 # Dockerized Minecraft Bedrock Server
 
-This project sets up a Dockerized Minecraft Bedrock server, allowing you to run a Minecraft server inside a Docker container. It includes a script to update the Docker image and recreate the server containers automatically when a new version of the image is available.
+This project sets up a Dockerized Minecraft Bedrock server based on itzg/minecraft-bedrock-server:latest, allowing you to run a Minecraft server inside a Docker container. It includes a script to update the Docker image and recreate the server containers automatically when a new version of the image is available. 
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ docker run --rm -v creative-data:/data alpine chown 1000:1000 /data
 
 ## Update Script
 
-The `updateMCscript.sh` script checks for updates to the Minecraft Bedrock server Docker image. If a new version is found, the script will pull the updated image, recreate the server containers with the new image, and log the operation.
+The `updateMCscript.sh` script checks for updates to the Minecraft Bedrock server Docker image. If a new version is found, the script will pull the updated image, recreate the server containers with the new image, and log the operation. I hope to add a command that will warn the players of the downtime but that is in the todo list 
 
 ### Usage
 
